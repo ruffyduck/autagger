@@ -1,6 +1,9 @@
 """Entry point for AuTag"""
 
-import sys, getopt
+import sys, getopt, os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from autag.controller.auclean import AutoCleanup
 from autag.controller.aucrawl import AutoCrawler
 from autag.controller.audefault import AutoDefault
@@ -13,12 +16,12 @@ from autag.controller.autagger import AutoTagger
 from autag.controller.repltag import ReplaceTag
 from autag.model.audict import build_auto_dicts
 from autag.model.basetag import get_tag
-from view.augui import AuGUI
+from autagger.view.augui import AuGUI
 
 
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv, "hd:", ["-help","directory="])
+		opts, _ = getopt.getopt(argv, "hd:", ["-help","directory="])
 	except getopt.GetoptError as e:
 		print(e)
 		sys.exit(2)

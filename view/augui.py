@@ -2,8 +2,8 @@
 
 from tkinter import Button, mainloop, Tk
 import tkinter.filedialog
-from view.tagentry import TagEntry, SingleTagEntry
-from view.gridmanager import GridManager
+from autagger.view.tagentry import TagEntry, SingleTagEntry
+from autagger.view.gridmanager import GridManager
 from autag.model.basetag import get_tag
 from autag.controller.filereader import get_aufiles
 
